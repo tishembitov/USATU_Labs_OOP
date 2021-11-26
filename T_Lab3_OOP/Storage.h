@@ -28,12 +28,13 @@ public:
     }
 
     void setObject(T* object, int index) {
-        printf("Объект под индексом %d добавлен\n", index);
+        printf("Объект с индексом %d добавлен\n", index);
         m_data[index] = object;
     }
 
     void Erase()
     {
+        printf("объекты  в хранилище удалены\n");
         delete[] m_data;
         // Присваиваем значение nullptr для m_data, чтобы на выходе не получить висячий указатель!
         m_data = nullptr;
@@ -50,6 +51,7 @@ public:
     // Функция reallocate() изменяет размер массива. Все существующие элементы внутри массива будут уничтожены. Процесс быстрый
     void reallocate(int newLength)
     {
+        printf("изменяем размер хранилища с удалением объектов в нем на %d\n", newLength);
         // Удаляем все существующие элементы внутри массива
         Erase();
 
@@ -65,6 +67,7 @@ public:
     // Функция resize() изменяет размер массива. Все существующие элементы сохраняются. Процесс медленный
     void resize(int newLength)
     {
+        printf("изменяем размер хранилища без удаления объектов в нем на %d\n", newLength);
         // Если массив уже нужной длины, то выполняем return
         if (newLength == m_length)
             return;
@@ -106,7 +109,7 @@ public:
 
     void insertBefore(T* object, int index)
     {
-        printf("Объект под индексом %d добавлен\n", index);
+        printf("Объект с индексом %d добавлен\n", index);
         // Проверка корректности передаваемого индекса
         assert(index >= 0 && index <= m_length);
 
@@ -132,7 +135,7 @@ public:
 
     void remove(int index)
     {
-        printf("Объект под индексом %d удален", index);
+        printf("Объект с индексом %d удален\n", index);
         // Проверка на корректность передаваемого индекса
         assert(index >= 0 && index < m_length);
 
@@ -164,7 +167,10 @@ public:
     void insertAtBeginning(T* object) { insertBefore(object, 0); }
     void insertAtEnd(T* object) { insertBefore(object, m_length); }
 
-    int getLength()  { return m_length; }
+    int getLength() 
+    {
+        return m_length; 
+    }
 };
 
 #endif

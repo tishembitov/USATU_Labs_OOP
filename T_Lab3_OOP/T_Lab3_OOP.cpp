@@ -60,20 +60,58 @@ public:
 int main()
 {
     setlocale(LC_ALL, "Rus");
-	Storage <Shape> storage(10);
-	// добавляем в него объекты
-	for (int i = 0; i < storage.getLength(); i++)
-		storage.setObject(new Point(), i);
-    Section *s = new Section();
+    Storage <Shape> storage(10);
+    // добавляем в него объекты
+    for (int i = 0; i < storage.getLength(); i++)
+        storage.setObject(new Point(), i);
+    Section* s = new Section();
     storage.insertAtEnd(s);
-	// обращаемся поочередно ко всем
+    // обращаемся поочередно ко всем
     for (int i = 0; i < storage.getLength(); i++)
     {
-        printf("объект под номером %d:", i);
+        printf("объект с номером %d:", i);
         storage.operator[](i).show();
     }
     printf("Количество объектов в хранилище до удаления:%d\n", storage.getLength());
     storage.remove(5);
-    printf("\nКоличество объектов в хранилище после удаления:%d", storage.getLength());
-	return 0;
+    printf("Количество объектов в хранилище после удаления:%d\n", storage.getLength());
+    srand(time(NULL));
+    printf("\nвызов случайных методов хранилища\n\n");
+    for (int i = 0; i < 10; i++)
+    {
+        int control = rand() % 8 + 1;
+        switch (control)
+        {
+        case 1:
+            if (storage.getLength() > 0)
+            storage.setObject(new Point(), storage.getLength()-1);
+            break;
+        case 2:
+            printf("Количество объектов в хранилище:%d\n", storage.getLength());
+            break;
+        case 3:
+            storage.reallocate(20);
+            break;
+        case 4:
+            storage.resize(storage.getLength() + 5);
+            break;
+        case 5:
+            if (storage.getLength() > 0)
+            storage.insertBefore(new Point(), storage.getLength()-1);
+            break;
+        case 6:
+            if (storage.getLength() > 0)
+            storage.remove(storage.getLength()-1);
+            break;
+        case 7:
+            if (storage.getLength() > 0)
+            storage.insertAtBeginning(new Point());
+                break;
+        case 8:
+            if (storage.getLength() > 0)
+            storage.insertAtEnd(new Point());
+            break;
+        }
+    }
+    return 0;
 }
