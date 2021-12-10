@@ -3,28 +3,28 @@
 #include <iostream>
 using namespace std;
 
-Ñylinder::Ñylinder() : Circle(), h(0)
+Cylinder::Cylinder() : Circle(), h(0)
 {
-	cout << "Âûçâàí êîíñòðóêòîð ïî óìîë÷àíèþ êëàññà Ñylinder : Ñylinder()" << endl;
+	cout << "Âûçâàí êîíñòðóêòîð ïî óìîë÷àíèþ êëàññà Cylinder : Cylinder()" << endl;
 }
 
-Ñylinder::Ñylinder(float a, float b, float rad, float he) : Circle(a, b, rad), h(he)
+Cylinder::Cylinder(float a, float b, float rad, float he) : Circle(a, b, rad), h(he)
 {
 	cout << "Âûçâàí êîíñòðóêòîð ñ ïàðàìåòðàìè êëàññà Circle : Circle(" << x << ", " << y << "," << rad << "," << he << ")" << endl;
 }
 
-Ñylinder::Ñylinder(Ñylinder& cylinder) : Circle(cylinder), h(cylinder.h)
+Cylinder::Cylinder(Cylinder& cylinder) : Circle(cylinder), h(cylinder.h)
 {
-	cout << "Âûçâàí êîíñòðóêòîð êîïèðîâàíèÿ êëàññà Ñylinder : Ñylinder (Ñylindert& cylinder)" << endl;
+	cout << "Âûçâàí êîíñòðóêòîð êîïèðîâàíèÿ êëàññà Cylinder : Cylinder (Cylindert& cylinder)" << endl;
 }
 
-void Ñylinder::Print()
+void Cylinder::Print()
 {
 	Circle::Print();
 	cout << "|| çíà÷åíèå h : " << h;
 }
 
-void Ñylinder::Modify()
+void Cylinder::Modify()
 {
 	Circle::Modify();
 	cout << " ||  h = ";
@@ -32,45 +32,45 @@ void Ñylinder::Modify()
 }
 
 //âîçâðàò èìåíè òèïà
-const string Ñylinder::ClassName()
+const string Cylinder::ClassName()
 {
-	return "Ñylinder";
+	return "Cylinder";
 }
 
 //ñîâïàäàåò ëè îòïðàâëåííîå íàçâàíèå ñ íàçâàíèåì òåêóùåãî êëàññà
-bool Ñylinder::isA(string className)
+bool Cylinder::isA(string className)
 {
 
 
 	//ñðàâíåíèå ñ íàçâàíèåì êëàññà Circle
-	if (className.compare("Ñylinder") == 0)
+	if (className.compare("Cylinder") == 0)
 		return true;
 
 	return Circle::isA(className);
 }
 
-float Ñylinder::GetÑh()
+float Cylinder::GetÑh()
 {
 	cout << "Âûçâàí ìåòîä GetÑh êëàññà Cylinder" << endl;
 	return h * 3, 14 * r * r;
 }
 
-const char* Ñylinder::GetType()
+const char* Cylinder::GetType()
 {
-	return "Ñylinder";
+	return "Cylinder";
 }
 
-float Ñylinder::GetH()
+float Cylinder::GetH()
 {
 	return h;
 }
 
-void Ñylinder::SetH(float he)
+void Cylinder::SetH(float he)
 {
 	h = he;
 }
 
-Ñylinder::~Ñylinder()
+Cylinder::~Cylinder()
 {
 	cout << "Âûçâàí äåñòðóêòîð êëàññà Cyliner" << endl;
 }

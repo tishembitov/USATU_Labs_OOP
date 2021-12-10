@@ -1,7 +1,4 @@
-﻿// LAB5_OOP.cpp : Этот файл содержит функцию "main". Здесь начинается и заканчивается выполнение программы.
-//
-
-#include "pch.h"
+﻿#include "pch.h"
 #include <iostream>
 #include "Point.h"
 #include "Circle.h"
@@ -66,7 +63,7 @@ int main()
 		else if (i % 4 == 2)
 			linkedList.AddAfter(new Scope());
 
-		else linkedList.AddAfter(new Сylinder());
+		else linkedList.AddAfter(new Cylinder());
 	}
 
 	linkedList.MoveFirst();
@@ -81,8 +78,8 @@ int main()
 		if (linkedList.GetValue()->isA("Circle") == true) cout << "  true ";
 		else cout << "  false";
 
-		cout << " ||" << linkedList.GetValue()->ClassName().c_str() << " \tisA(Сylinder)";
-		if (linkedList.GetValue()->isA("Сylinder") == true) cout << "  true";
+		cout << " ||" << linkedList.GetValue()->ClassName().c_str() << " \tisA(Cylinder)";
+		if (linkedList.GetValue()->isA("Cylinder") == true) cout << "  true";
 		else cout << "  false";
 
 		cout << "\t||" << linkedList.GetValue()->ClassName().c_str() << " \tisA(Scope)";
@@ -140,7 +137,7 @@ int main()
 	cout << "Перекрытие методов :" << endl << endl;
 
 	Circle* circle = new Circle(2, 2, 2);
-	Сylinder* cylinder = new Сylinder(4, 4, 4, 4);
+	Cylinder* cylinder = new Cylinder(4, 4, 4, 4);
 	cout << endl;
 
 	cout << "Вызов метода GetСh у объекта circle (площадь circle) : " << circle->GetСh() << endl << endl;
@@ -165,7 +162,7 @@ int main()
 	linkedList.MoveFirst();
 	for (int i = 0; i < linkedList.GetLength(); i++)
 	{
-		Сylinder* cylinder = dynamic_cast <Сylinder*>(linkedList.GetValue());
+		Cylinder* cylinder = dynamic_cast <Cylinder*>(linkedList.GetValue());
 
 		if (cylinder != NULL) {
 			cout << i << ") ";
@@ -186,10 +183,10 @@ int main()
 
 	for (int i = 0; i < linkedList.GetLength(); i++)
 	{
-		if (linkedList.GetValue()->isA("Сylinder"))
+		if (linkedList.GetValue()->isA("Cylinder"))
 		{
 			cout << i << ") ";
-			Сylinder* cylinder = (Сylinder*)(linkedList.GetValue());
+			Cylinder* cylinder = (Cylinder*)(linkedList.GetValue());
 			cylinder->Print();
 			cout << endl << "cylinder->SetX(46);" << endl;
 			cylinder->SetX(46);

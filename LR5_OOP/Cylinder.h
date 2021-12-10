@@ -1,18 +1,18 @@
 #pragma once
 #include "Circle.h"
-class Сylinder : public Circle
+class Cylinder : public Circle
 {
 private:
 	float h;
 public:
-	//конструктор по умолчанию для класса Сylinder
-	Сylinder();
+	//конструктор по умолчанию для класса Cylinder
+	Cylinder();
 
-	//конструктор с параметрами для класса Сylinder
-	Сylinder(float a, float b, float rad, float he);
+	//конструктор с параметрами для класса Cylinder
+	Cylinder(float a, float b, float rad, float he);
 
 	//Конструктор копирования ( т.е. копирует х и у )
-	Сylinder(Сylinder& cylinder);
+	Cylinder(Cylinder& cylinder);
 
 	//Вывод содержимого класса
 	void Print();
@@ -37,7 +37,7 @@ public:
 	void SetH(float he);
 
 
-	~Сylinder()override;
+	~Cylinder()override;
 };
 
 
