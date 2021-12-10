@@ -12,6 +12,7 @@
 #include "Scope.h"
 #include "LinkedList.h"
 #include <time.h>
+#include <memory>
 
 using namespace std;
 
@@ -196,6 +197,35 @@ int main()
 		}
 		linkedList.MoveNext();
 	}
+	line();
+	cout << "unique_ptr:" << endl << endl;
+	unique_ptr<Point> point1(new Point); // выделение Point
+	unique_ptr<Point> point2; // присваивается значение nullptr
+
+	cout << "point1 is " << (static_cast<bool>(point1) ? "not null\n" : "null\n");
+	cout << "point2 is " << (static_cast<bool>(point2) ? "not null\n" : "null\n");
+
+	// point2 = point1; // не скомпилируется: семантика копирования отключена
+	point2 = move(point1); // point2 теперь владеет point1, а для point1 присваивается значение null
+
+	cout << "передача владения\n";
+
+	cout << "point1 is " << (static_cast<bool>(point1) ? "not null\n" : "null\n");
+	cout << "point2 is " << (static_cast<bool>(point2) ? "not null\n" : "null\n");
+
+	line();
+
+	line();
+	cout << "shared_ptr:" << endl << endl;
+	Point* point3 = new Point();
+	shared_ptr<Point> ptr1(point3);
+	{
+		shared_ptr<Point> ptr2(ptr1); // используем копирующую инициализацию для создания второго shared_ptr из ptr1, указывающего на тот же Point
+
+		cout << "Уничтожение одного общего указателя\n";
+	} // ptr2 выходит из области видимости здесь, но больше ничего не происходит
+
+	cout << "Уничтожение другого общего указателя\n";
 	line();
 	delete cylinder;
 	delete circle;
