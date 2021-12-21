@@ -5,23 +5,23 @@ using namespace std;
 
 Scope::Scope()
 {
-	cout << "Âûçâàí êîíñòðóêòîð ïî óìîë÷àíèþ êëàññà Scope : Scope()" << endl;
+	cout << "Ð’Ñ‹Ð·Ð²Ð°Ð½ ÐºÐ¾Ð½ÑÑ‚Ñ€ÑƒÐºÑ‚Ð¾Ñ€ Ð¿Ð¾ ÑƒÐ¼Ð¾Ð»Ñ‡Ð°Ð½Ð¸ÑŽ ÐºÐ»Ð°ÑÑÐ° Scope : Scope()" << endl;
 }
 
 Scope::Scope(float a, float b, float ze, float rad) : Point(a, b), z(ze), r(rad)
 {
-	cout << "Âûçâàí êîíñòðóêòîð ñ ïàðàìåòðàìè êëàññà Scope : Scope()" << endl;
+	cout << "Ð’Ñ‹Ð·Ð²Ð°Ð½ ÐºÐ¾Ð½ÑÑ‚Ñ€ÑƒÐºÑ‚Ð¾Ñ€ Ñ Ð¿Ð°Ñ€Ð°Ð¼ÐµÑ‚Ñ€Ð°Ð¼Ð¸ ÐºÐ»Ð°ÑÑÐ° Scope : Scope()" << endl;
 }
 
 Scope::Scope(Scope& scope) : Point(scope), z(scope.z)
 {
-	cout << "Âûçâàí êîíñòðóêòîð êîïèðîâàíèÿ êëàññà Scope : Scope (Scope& scope)" << endl;
+	cout << "Ð’Ñ‹Ð·Ð²Ð°Ð½ ÐºÐ¾Ð½ÑÑ‚Ñ€ÑƒÐºÑ‚Ð¾Ñ€ ÐºÐ¾Ð¿Ð¸Ñ€Ð¾Ð²Ð°Ð½Ð¸Ñ ÐºÐ»Ð°ÑÑÐ° Scope : Scope (Scope& scope)" << endl;
 }
 
 void Scope::Print()
 {
 	Point::Print();
-	cout << " ||  çíà÷åíèå r : " << r << " || çíà÷åíèå z : " << z;
+	cout << " ||  Ð·Ð½Ð°Ñ‡ÐµÐ½Ð¸Ðµ r : " << r << " || Ð·Ð½Ð°Ñ‡ÐµÐ½Ð¸Ðµ z : " << z;
 
 }
 
@@ -57,11 +57,11 @@ const string Scope::ClassName()
 }
 
 
-//ñîâïàäàåò ëè îòïðàâëåííîå íàçâàíèå ñ íàçâàíèåì òåêóùåãî êëàññà
+//ÑÐ¾Ð²Ð¿Ð°Ð´Ð°ÐµÑ‚ Ð»Ð¸ Ð¾Ñ‚Ð¿Ñ€Ð°Ð²Ð»ÐµÐ½Ð½Ð¾Ðµ Ð½Ð°Ð·Ð²Ð°Ð½Ð¸Ðµ Ñ Ð½Ð°Ð·Ð²Ð°Ð½Ð¸ÐµÐ¼ Ñ‚ÐµÐºÑƒÑ‰ÐµÐ³Ð¾ ÐºÐ»Ð°ÑÑÐ°
 bool Scope::isA(string className)
 {
 
-	//ñðàâíåíèå ñ íàçâàíèåì êëàññà Circle
+	//ÑÑ€Ð°Ð²Ð½ÐµÐ½Ð¸Ðµ Ñ Ð½Ð°Ð·Ð²Ð°Ð½Ð¸ÐµÐ¼ ÐºÐ»Ð°ÑÑÐ° Circle
 	if (className.compare("Scope") == 0)
 		return true;
 
@@ -75,5 +75,5 @@ void Scope::SetRadius(float rad) {
 
 Scope::~Scope()
 {
-	cout << "Âûçâàí äåñòðóêòîð êëàññà Scope" << endl;
+	cout << "Ð’Ñ‹Ð·Ð²Ð°Ð½ Ð´ÐµÑÑ‚Ñ€ÑƒÐºÑ‚Ð¾Ñ€ ÐºÐ»Ð°ÑÑÐ° Scope" << endl;
 }

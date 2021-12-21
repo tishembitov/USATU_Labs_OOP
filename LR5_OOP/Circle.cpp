@@ -5,22 +5,22 @@ using namespace std;
 
 Circle::Circle() : Point(), r(0)
 {
-	cout << "Âûçâàí êîíñòðóêòîð ïî óìîë÷àíèþ êëàññà Circle : Circle()" << endl;
+	cout << "Ð’Ñ‹Ð·Ð²Ð°Ð½ ÐºÐ¾Ð½ÑÑ‚Ñ€ÑƒÐºÑ‚Ð¾Ñ€ Ð¿Ð¾ ÑƒÐ¼Ð¾Ð»Ñ‡Ð°Ð½Ð¸ÑŽ ÐºÐ»Ð°ÑÑÐ° Circle : Circle()" << endl;
 }
 
 Circle::Circle(float a, float b, float rad) : Point(a, b), r(rad)
 {
-	cout << "Âûçâàí êîíñòðóêòîð ñ ïàðàìåòðàìè êëàññà Circle : Circle(" << x << ", " << y << "," << rad << ")" << endl;
+	cout << "Ð’Ñ‹Ð·Ð²Ð°Ð½ ÐºÐ¾Ð½ÑÑ‚Ñ€ÑƒÐºÑ‚Ð¾Ñ€ Ñ Ð¿Ð°Ñ€Ð°Ð¼ÐµÑ‚Ñ€Ð°Ð¼Ð¸ ÐºÐ»Ð°ÑÑÐ° Circle : Circle(" << x << ", " << y << "," << rad << ")" << endl;
 }
 
 Circle::Circle(Circle& circle) : Point(circle), r(circle.r)
 {
-	cout << "Âûçâàí êîíñòðóêòîð êîïèðîâàíèÿ êëàññà Circle : Circle (Circle& circle)" << endl;
+	cout << "Ð’Ñ‹Ð·Ð²Ð°Ð½ ÐºÐ¾Ð½ÑÑ‚Ñ€ÑƒÐºÑ‚Ð¾Ñ€ ÐºÐ¾Ð¿Ð¸Ñ€Ð¾Ð²Ð°Ð½Ð¸Ñ ÐºÐ»Ð°ÑÑÐ° Circle : Circle (Circle& circle)" << endl;
 }
 
-float Circle::GetÑh()
+float Circle::GetCh()
 {
-	cout << "Âûçâàí ìåòîä GetÑh êëàññà Circle" << endl;
+	cout << "Ð’Ñ‹Ð·Ð²Ð°Ð½ Ð¼ÐµÑ‚Ð¾Ð´ GetÐ¡h ÐºÐ»Ð°ÑÑÐ° Circle" << endl;
 	return 3, 14 * r * r;
 }
 
@@ -37,11 +37,11 @@ const string Circle::ClassName()
 }
 
 
-//ñîâïàäàåò ëè îòïðàâëåííîå íàçâàíèå ñ íàçâàíèåì òåêóùåãî êëàññà
+//ÑÐ¾Ð²Ð¿Ð°Ð´Ð°ÐµÑ‚ Ð»Ð¸ Ð¾Ñ‚Ð¿Ñ€Ð°Ð²Ð»ÐµÐ½Ð½Ð¾Ðµ Ð½Ð°Ð·Ð²Ð°Ð½Ð¸Ðµ Ñ Ð½Ð°Ð·Ð²Ð°Ð½Ð¸ÐµÐ¼ Ñ‚ÐµÐºÑƒÑ‰ÐµÐ³Ð¾ ÐºÐ»Ð°ÑÑÐ°
 bool Circle::isA(string className)
 {
 
-	//ñðàâíåíèå ñ íàçâàíèåì êëàññà Circle
+	//ÑÑ€Ð°Ð²Ð½ÐµÐ½Ð¸Ðµ Ñ Ð½Ð°Ð·Ð²Ð°Ð½Ð¸ÐµÐ¼ ÐºÐ»Ð°ÑÑÐ° Circle
 	if (className.compare("Circle") == 0)
 		return true;
 
@@ -53,7 +53,7 @@ bool Circle::isA(string className)
 void Circle::Print()
 {
 	Point::Print();
-	cout << " || çíà÷åíèå r : " << r;
+	cout << " || Ð·Ð½Ð°Ñ‡ÐµÐ½Ð¸Ðµ r : " << r;
 }
 
 const char* Circle::GetType()
@@ -64,5 +64,5 @@ const char* Circle::GetType()
 
 Circle::~Circle()
 {
-	cout << "Âûçâàí äåñòðóêòîð êëàññà Circle" << endl;
+	cout << "Ð’Ñ‹Ð·Ð²Ð°Ð½ Ð´ÐµÑÑ‚Ñ€ÑƒÐºÑ‚Ð¾Ñ€ ÐºÐ»Ð°ÑÑÐ° Circle" << endl;
 }

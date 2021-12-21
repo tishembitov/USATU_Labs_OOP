@@ -5,23 +5,23 @@ using namespace std;
 
 Cylinder::Cylinder() : Circle(), h(0)
 {
-	cout << "Вызван конструктор по умолчанию класса Cylinder : Cylinder()" << endl;
+	cout << "Р’С‹Р·РІР°РЅ РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ РїРѕ СѓРјРѕР»С‡Р°РЅРёСЋ РєР»Р°СЃСЃР° Cylinder : Cylinder()" << endl;
 }
 
 Cylinder::Cylinder(float a, float b, float rad, float he) : Circle(a, b, rad), h(he)
 {
-	cout << "Вызван конструктор с параметрами класса Circle : Circle(" << x << ", " << y << "," << rad << "," << he << ")" << endl;
+	cout << "Р’С‹Р·РІР°РЅ РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ СЃ РїР°СЂР°РјРµС‚СЂР°РјРё РєР»Р°СЃСЃР° Circle : Circle(" << x << ", " << y << "," << rad << "," << he << ")" << endl;
 }
 
 Cylinder::Cylinder(Cylinder& cylinder) : Circle(cylinder), h(cylinder.h)
 {
-	cout << "Вызван конструктор копирования класса Cylinder : Cylinder (Cylindert& cylinder)" << endl;
+	cout << "Р’С‹Р·РІР°РЅ РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ РєРѕРїРёСЂРѕРІР°РЅРёСЏ РєР»Р°СЃСЃР° Cylinder : Cylinder (Cylindert& cylinder)" << endl;
 }
 
 void Cylinder::Print()
 {
 	Circle::Print();
-	cout << "|| значение h : " << h;
+	cout << "|| Р·РЅР°С‡РµРЅРёРµ h : " << h;
 }
 
 void Cylinder::Modify()
@@ -31,27 +31,27 @@ void Cylinder::Modify()
 	cin >> h;
 }
 
-//возврат имени типа
+//РІРѕР·РІСЂР°С‚ РёРјРµРЅРё С‚РёРїР°
 const string Cylinder::ClassName()
 {
 	return "Cylinder";
 }
 
-//совпадает ли отправленное название с названием текущего класса
+//СЃРѕРІРїР°РґР°РµС‚ Р»Рё РѕС‚РїСЂР°РІР»РµРЅРЅРѕРµ РЅР°Р·РІР°РЅРёРµ СЃ РЅР°Р·РІР°РЅРёРµРј С‚РµРєСѓС‰РµРіРѕ РєР»Р°СЃСЃР°
 bool Cylinder::isA(string className)
 {
 
 
-	//сравнение с названием класса Circle
+	//СЃСЂР°РІРЅРµРЅРёРµ СЃ РЅР°Р·РІР°РЅРёРµРј РєР»Р°СЃСЃР° Circle
 	if (className.compare("Cylinder") == 0)
 		return true;
 
 	return Circle::isA(className);
 }
 
-float Cylinder::GetСh()
+float Cylinder::GetCh()
 {
-	cout << "Вызван метод GetСh класса Cylinder" << endl;
+	cout << "Р’С‹Р·РІР°РЅ РјРµС‚РѕРґ GetРЎh РєР»Р°СЃСЃР° Cylinder" << endl;
 	return h * 3, 14 * r * r;
 }
 
@@ -72,5 +72,5 @@ void Cylinder::SetH(float he)
 
 Cylinder::~Cylinder()
 {
-	cout << "Вызван деструктор класса Cyliner" << endl;
+	cout << "Р’С‹Р·РІР°РЅ РґРµСЃС‚СЂСѓРєС‚РѕСЂ РєР»Р°СЃСЃР° Cyliner" << endl;
 }

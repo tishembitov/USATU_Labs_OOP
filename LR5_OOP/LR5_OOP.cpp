@@ -141,8 +141,8 @@ int main()
 	Cylinder* cylinder = new Cylinder(4, 4, 4, 4);
 	cout << endl;
 
-	cout << "Вызов метода GetСh у объекта circle (площадь circle) : " << circle->GetСh() << endl << endl;
-	cout << "Вызов метода GetСh у объекта cylinder (объем cylinder) : " << cylinder->GetСh() << endl << endl;
+	cout << "Вызов метода GetСh у объекта circle (площадь circle) : " << circle->GetCh() << endl << endl;
+	cout << "Вызов метода GetСh у объекта cylinder (объем cylinder) : " << cylinder->GetCh() << endl << endl;
 
 	line();
 	cout << "Вызов наследуемого метода :" << endl << endl;
